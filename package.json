@@ -1,7 +1,8 @@
 {
-  "name": "template-engine-mirko",
+  "name": "mirtemplates",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "A simple template engine built by me",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,7 +11,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "standard": "17.1.0"
   },
