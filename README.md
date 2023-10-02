@@ -18,13 +18,3 @@ compile(template, objWithValues)
 ```
 - **template**: Debera contener el template en formato HTML
 - **objWithValues**: Objeto con el formato *{varName: varValue}*. Debera contener el nombre de la variable y su valor.
-
-## Playground
-Este repositorio esta preparado para probar el funcionamiento del *template engine*. Para hacerlo, solo se debe clonar y reemplazar con los valores deseados los archivos `template.html` e `index.js`
-
-
-- Para ponerlo en funcionamiento se debe ejecutar el siguiente comando:
-```
-npm start
-```
-> No es necesario `npm install` ya que el proyecto no tiene dependencias externas.
