@@ -1,8 +1,8 @@
-const fs = require("fs/promises")
+import { readFile } from 'fs/promises'
 
 async function readHTML (route) {
-  let fileData = await fs.readFile(route, "utf-8")
+  const fileData = await readFile(route, 'utf-8')
   return fileData
 }
 
-module.exports = { readHTML }
+export { readHTML }

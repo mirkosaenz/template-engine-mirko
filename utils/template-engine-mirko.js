@@ -1,11 +1,14 @@
-function compile (template, objValues) {
-  if (!template.includes("**")) return template
+import { readHTML } from './readHTML.js'
 
+async function compile (templateURL, objValues) {
+  const template = await readHTML(templateURL)
+
+  if (!template.includes('**')) return template
 
   try {
-    const variablesCount = (template.split("**").length - 1) / 2
-    if (Math.floor(variablesCount) != variablesCount) {
-      throw new TypeError("No has cerrado la declaracion (falta ** ).")
+    const variablesCount = (template.split('**').length - 1) / 2
+    if (Math.floor(variablesCount) !== variablesCount) {
+      throw new TypeError('No has cerrado la declaracion (falta ** ).')
     }
 
     const variables = replaceValues({ template, variablesCount, objValues })
@@ -17,31 +20,30 @@ function compile (template, objValues) {
 
 function replaceValues ({ template, variablesCount, objValues }) {
   try {
-    let templateArray = template.split("")
+    const templateArray = template.split('')
     let indexStart = 0
 
     for (let i = 0; i < variablesCount; i++) {
-      let firstIndex = templateArray.join("").indexOf("**", indexStart)
-      let firstPosition = firstIndex + 2
-      let nextPosition = templateArray.join("").indexOf("**", firstPosition)
+      const firstIndex = templateArray.join('').indexOf('**', indexStart)
+      const firstPosition = firstIndex + 2
+      const nextPosition = templateArray.join('').indexOf('**', firstPosition)
 
-      let variableLength = nextPosition - firstPosition
-      let variableName = templateArray.slice(firstPosition, nextPosition).join("")
-      let variableValue = objValues[variableName]
-      let variableValueSeparated = variableValue.split("")
+      const variableLength = nextPosition - firstPosition
+      const variableName = templateArray.slice(firstPosition, nextPosition).join('')
+      const variableValue = objValues[variableName]
+      const variableValueSeparated = variableValue.split('')
 
       templateArray.splice(firstIndex, variableLength + 4, ...variableValueSeparated)
 
-      let newIndexStart = templateArray.indexOf(variableValue)
-
+      const newIndexStart = templateArray.indexOf(variableValue)
 
       indexStart = newIndexStart
     }
 
-    return templateArray.join("")
+    return templateArray.join('')
   } catch (e) {
     return e
   }
 }
 
-module.exports = { compile }
+export { compile }
