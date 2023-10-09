@@ -1,5 +1,5 @@
-# Mirtemplates - My own template engine! 😆*!
-Construí este *template engine* para entender el funcionamiento de algunos *template engines* como [Handlebars]("https://handlebarsjs.com/"), [EJS](https://ejs.co/), etc.
+# **Mirtemplates - My own template engine!** 😆
+Este tes un *Template engine* que construí entender el funcionamiento de algunos *template engines* como [Handlebars]("https://handlebarsjs.com/"), [EJS](https://ejs.co/), etc.
 
 ## Uso
 Para usar este template-engine, se debe contar con un **template** en formato **HTML**. Las variables deben especificarse de la siguiente manera:
