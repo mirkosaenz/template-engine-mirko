@@ -1,4 +1,4 @@
-import { readHTML } from './readHTML.js'
+import { readHTML } from './utils/readHTML.js'
 
 async function compile (templateURL, objValues) {
   const template = await readHTML(templateURL)
