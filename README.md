@@ -12,7 +12,7 @@ Para usar este template-engine, se debe contar con un **template** en formato **
 Luego, para compilar el template con un valor, se debe llamar a **compile**:
 
 ```
-import { compile } from ("./utils/template-engine-mirko") //in ES modules
+import { compile } from ("mirtemplates") //in ES modules
 
 compile(template, objWithValues)
 ```
