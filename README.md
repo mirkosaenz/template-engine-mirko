@@ -1,4 +1,4 @@
-# **Mirtemplates - My own template engine!** 😆
+# Template engine
 Este es un *Template engine* que construí entender el funcionamiento de algunos *template engines* como [Handlebars]("https://handlebarsjs.com/"), [EJS](https://ejs.co/), etc.
 
 ## Uso
